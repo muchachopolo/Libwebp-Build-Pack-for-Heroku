@@ -18,7 +18,7 @@ ls $BUILD_DIR | indent
 exit 1;
 fi
 
-echo "-----> Extracting LibWebP from $BUILD_DIR/$LIBWEBP_FILE to $LIBWEBP_DIR"
+echo "-----> Extracting LibWebP from $BUILD_DIR/$LIBWEBP_FILE to $BUILD_DIR/$LIBWEBP_DIR"
 tar xvf $BUILD_DIR/$LIBWEBP_FILE -C $BUILD_DIR/$LIBWEBP_DIR --strip 1 | indent
 
 echo "-----> Building LibWebP"
@@ -27,7 +27,9 @@ cd $BUILD_DIR/$LIBWEBP_DIR
 
 ./configure
 make
-sudo make install
+make install
 
 echo "------> Listing Bash"
 ls /usr/local/bin/
+
+apt-get install libjpeg-dev libpng-dev libtiff-dev libgif-dev
