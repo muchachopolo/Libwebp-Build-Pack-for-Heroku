@@ -19,11 +19,11 @@ exit 1;
 fi
 
 echo "-----> Extracting LibWebP from $BUILD_DIR/$LIBWEBP_FILE to $LIBWEBP_DIR"
-tar xvf $BUILD_DIR/$LIBWEBP_FILE -C $LIBWEBP_DIR --strip 1 | indent
+tar xvf $BUILD_DIR/$LIBWEBP_FILE -C $BUILD_DIR/$LIBWEBP_DIR --strip 1 | indent
 
 echo "-----> Building LibWebP"
 
-cd $LIBWEBP_DIR
+cd $BUILD_DIR/$LIBWEBP_DIR
 
 ./configure
 make
