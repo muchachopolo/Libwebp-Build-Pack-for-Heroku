@@ -18,7 +18,7 @@ ls $BUILD_DIR | indent
 exit 1;
 fi
 
-echo "-----> Extracting LibWebP from $BUILD_DIR/$LIBWEBP_FILE to LIBWEBP_DIR"
+echo "-----> Extracting LibWebP from $BUILD_DIR/$LIBWEBP_FILE to $LIBWEBP_DIR"
 tar xvf $BUILD_DIR/$LIBWEBP_FILE -C $LIBWEBP_DIR --strip 1 | indent
 
 echo "-----> Building LibWebP"
