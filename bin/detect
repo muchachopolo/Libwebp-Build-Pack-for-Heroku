@@ -1,10 +1,9 @@
-#!/bin/sh
 
-# this pack is valid for apps with a hello.txt in the root
-if [ -f $1/libwebp/libwebp.tar ]; then
-  echo "libwebp detected, starting compiling..."
-  exit 0
+#!/usr/bin/env bash
+# bin/detect <build-dir>
+
+if [ -f $1/Aptfile ]; then
+  echo "Apt" && exit 0
 else
-  echo "libwebp not found. please add the source code at libwebp/libwebp.tar inside your project..."
-  exit 1
+  echo "no" && exit 1
 fi
