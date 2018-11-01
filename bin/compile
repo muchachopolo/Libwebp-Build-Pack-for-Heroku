@@ -4,6 +4,7 @@
 BUILD_DIR=$1
 CACHE_DIR=$2
 
+cd $BUILD_DIR
 
 wget http://cz2.php.net/get/php-7.2.11.tar.gz/from/this/mirror -O $BUILD_DIR/php-7.2.11.tar.gz
 
