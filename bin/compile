@@ -24,12 +24,9 @@ tar xvf $BUILD_DIR/$LIBWEBP_FILE -C $BUILD_DIR/$LIBWEBP_DIR --strip 1 | indent
 echo "-----> Building LibWebP"
 
 cd $BUILD_DIR/$LIBWEBP_DIR
-
+echo "-----> Configuring LibWebP"
 ./configure
+echo "-----> Making LibWebP"
 make
-make install
-
-echo "------> Listing Bash"
-ls /usr/local/bin/
 
 apt-get install libjpeg-dev libpng-dev libtiff-dev libgif-dev
