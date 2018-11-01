@@ -9,22 +9,7 @@ echo "-----> Install LibWebP"
 BUILD_DIR=$1
 CACHE_DIR=$2
 VENDOR_DIR="$BUILD_DIR/vendor"
-LIBWEBP_FILE="libwebp/libwebp.tar"
+LIBWEBP_FILE="libwebp/libvpx.tar"
 LIBWEBP_DIR="libwebp"
 
-if [ ! -f $BUILD_DIR/$LIBWEBP_FILE ]; then
-echo "Error: Unable to find the source code for libwebp." | indent
-ls $BUILD_DIR | indent
-exit 1;
-fi
-
-echo "-----> Extracting LibWebP from $BUILD_DIR/$LIBWEBP_FILE to $BUILD_DIR/$LIBWEBP_DIR"
-tar xvf $BUILD_DIR/$LIBWEBP_FILE -C $BUILD_DIR/$LIBWEBP_DIR --strip 1 | indent
-
-echo "-----> Building LibWebP"
-
-cd $BUILD_DIR/$LIBWEBP_DIR
-echo "-----> Configuring LibWebP"
-./configure
-echo "-----> Making LibWebP"
-make
+apt-get install php7.0-gd
