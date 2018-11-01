@@ -7,7 +7,14 @@ CACHE_DIR=$2
 
 wget http://cz2.php.net/get/php-7.2.11.tar.gz/from/this/mirror -O $BUILD_DIR/php-7.2.11.tar.gz
 
-tar -xvf $BUILD_DIR/php-7.2.11.tar.gz
+echo "-----> Extracting LibWebP from $BUILD_DIR/php-7.2.11.tar.gz to $BUILD_DIR/php-7.2.11"
+
+tar -xf $BUILD_DIR/php-7.2.11.tar.gz
+
+echo "-----> List $BUILD_DIR"
+ls $BUILD_DIR
+
+echo "-----> List $BUILD_DIR/php-7.2.11"
 
 cd $BUILD_DIR/php-7.2.11/ext/gd
 
