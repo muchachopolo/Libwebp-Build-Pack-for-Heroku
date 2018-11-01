@@ -28,5 +28,3 @@ echo "-----> Configuring LibWebP"
 ./configure
 echo "-----> Making LibWebP"
 make
-
-apt-get install libjpeg-dev libpng-dev
