@@ -1,0 +1,33 @@
+#!/bin/bash
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Install LibWebP"
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+VENDOR_DIR="$BUILD_DIR/vendor"
+LIBWEBP_FILE = "libwebp/libwebp.tar"
+LIBWEBP_DIR = "libwebp"
+
+if [ ! -f $BUILD_DIR/$LIBWEBP_FILE ]; then
+echo "Error: Unable to find the source code for libwebp." | indent
+ls $BUILD_DIR | indent
+exit 1;
+fi
+
+echo "-----> Extracting LibWebP from $BUILD_DIR/$LIBWEBP_FILE to LIBWEBP_DIR"
+tar xvf $BUILD_DIR/$LIBWEBP_FILE -C $LIBWEBP_DIR --strip 1 | indent
+
+echo "-----> Building LibWebP"
+
+cd $LIBWEBP_DIR
+
+./configure
+make
+sudo make install
+
+echo "------> Listing Bash"
+ls /usr/local/bin/
