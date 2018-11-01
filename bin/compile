@@ -19,6 +19,7 @@ echo "-----> List $BUILD_DIR/php-7.2.11"
 
 cd $BUILD_DIR/php-7.2.11/ext/gd
 
+echo "-----> PWD $BUILD_DIR/php-7.2.11"
+pwd
+ls
 ./configure --prefix=/app/.heroku/php/ --with-config-file-path=/app/.heroku/php/etc/php --with-config-file-scan-dir=/app/.heroku/php/etc/php/conf.d --disable-phpdbg --enable-fpm --with-bz2 --with-curl --with-pdo-mysql --with-mysqli --with-openssl --with-kerberos --with-pgsql --with-pdo-pgsql --with-readline --enable-sockets --enable-zip --with-zlib --enable-bcmath=shared --enable-calendar=shared --enable-exif=shared --enable-ftp=shared --with-gd=shared --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr --with-gettext=shared --with-gmp=shared --with-imap=shared,/app/.heroku/php//opt/imap-2007f --with-imap-ssl --enable-intl=shared --with-ldap=shared --with-ldap-sasl --enable-mbstring=shared --enable-pcntl=shared --enable-shmop=shared --enable-soap=shared --with-sqlite3=shared --with-pdo-sqlite=shared --with-xmlrpc=shared --with-xsl=shared --enable-opcache-file --with-sodium=shared --with-password-argon2 --with-webp-dir=/app/.apt/usr/include/webp
-
-make
